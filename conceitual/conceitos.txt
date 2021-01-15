@@ -36,6 +36,16 @@ empacotamento e desenpacotamento
 atributos de metodos, ou so metodos
 atributos de dados (data attributs), ou atributos de instancia, atributos de objeto
 
+----------paradigma orientado a objetos---------
+
+	*atributos
+-de classe
+-de instancia
+-dinamicos
+(sub categoria de atributos de instancia)
+
+#interpretador python busca os atributos primeiro nos atributos de instancia, depois nos de classe
+os atributos de classe são refenciados pelos objetos dessa classe.
 
 
 *---------------------------------------------fatiar x indexar--------------------------------------------------
