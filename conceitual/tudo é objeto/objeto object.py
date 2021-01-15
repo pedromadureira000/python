@@ -11,6 +11,14 @@ class vazio:
     pass
 print(set(dir(object)) - set(dir(vazio)))  #R retorna um conjunto varzio, pois todas definições de "object" são iquais as de "vazio"
 
+class Classe:
+    pass
+objeto = Classe()
+print(type(Classe))
+print(type(objeto))
+print(isinstance(objeto,object))
+
+
 
     #metodos herdados de object
 
