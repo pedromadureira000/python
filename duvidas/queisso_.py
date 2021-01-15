@@ -1,0 +1,2 @@
+# *global(modulo): nomes atribuidos no nivel suporior de um arquivo de modulo, ou declarados como global, em um def dentro do arquivo.
+# Variaveis globais são visiveis em todo o codigo. Podemos usar a funçaõ globals() para retornar um dicionario com todas as 1-variaveis globais.

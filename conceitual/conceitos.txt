@@ -1,0 +1,135 @@
+*--------------------paradigma procedural----------------
+    *tipos basicos
+
+inteiro
+float
+boleeanos
+
+    *sequencias
+
+string / formatação de string / f-string /
+lista
+tupla
+dicionario
+
+    *logica de escopo
+
+desvios condicionais if elif else / operador ternario
+laços com while
+iteração com for
+
+    *funções/metodos
+
+parametros poscicionais e nomeados
+args e kwargs
+f-string
+tipagem
+
+    *modulo e pacote
+
+doc strings / dir / help
+import
+empacotamento e desenpacotamento
+
+    *classe
+
+atributos de metodos, ou so metodos
+atributos de dados (data attributs), ou atributos de instancia, atributos de objeto
+
+
+
+*---------------------------------------------fatiar x indexar--------------------------------------------------
+fatiar[1:3]
+indexar[2]
+
+*----------------------------------------literais x variaveis----------------------------------------------
+
+
+
+*--------------------------------console iterativo vs interpretador em modulos-------------------------------------
+
+
+
+*-----------------------------------------------modulos--------------------------------------------------
+
+são arquivos.py , que podem funcionar como bibliotecas, sendo importados para outros modulos.
+
+*---------------------------------------------tipos de parametro de função/metodo---------------------------------
+
+parametro posicional:  parametro passados por justaposição
+parametro nomeado (keyword argument): passado por nome
+
+*----------------------------------------metodo vs função:------------------------------------------------------
+
+Um método é uma função que está definida dentro de uma classe, ou seja, irá pertencer a um objeto de instância. Já a função
+fica fora da classe, não pertence a um objeto de instância.
+
+saudacao()    Chamada de função
+objeto.formata()    Chamada de metodo
+
+
+*---------------------------------------tipos de escopo de variavel-----------------------------------------------
+
+*local: nomes atribuidos de qualquer forma dentro de uma função (def ou lambda) e declarações não globais nessa função
+
+*enclosing functions: Nome no escopo local de todas e quaisquer funções encapsuladas
+
+*global(escopo de todo o modulo): nomes atribuidos no nivel superior de um arquivo de modulo, ou declarados como global, em um def dentro do arquivo.
+Variaveis globais são visiveis em todo o codigo. Podemos usar a funçaõ globals() para retornar um dicionario com todas as 1-variaveis globais.
+
+*built-in(python): nomes pre-atribuidos no modulo open range, syntaxerror, ...
+
+*----------------------------------------------contexto-----------------------------------------------------
+
+escopo de onde seu condigo roda, dentro de um if ou no corpo de uma função por ex.
+
+
+
+*--------------------------Existem dois tipos de sequência em Python: simples e container.-----------------------------
+
+    -Sequências simples
+
+Armazenam itens de um só tipo de dado
+Armazenam o valor de cada item em seu próprio espaço de memória
+uma string é um exemplo de sequência simples
+
+    -Sequências container
+Podem armazenar itens de diferentes tipos
+Não armazenam o valor de seus itens em sí, mas sim suas referências
+some_list = ['R', 43, 5.0]
+
+Observe que em uma mesma lista, estamos armazenando três tipos diferentes: str, int e float. Certo? ERRADO! Estamos na verdade
+armazenando a referência (ou ponteiro) de cada um dos itens. Vale lembrar que todos os tipos de
+dados do Python são objetos!
+
+
+*---------------------------------------------funções built-in-----------------------------------------------------------
+
+
+    O que são funções built-in? E qual é sua diferença de palavras reservadas?
+
+Funções built-in são funções que estão sempre disponíveis, mesmo que não se importe nenhum pacote ou módulo da biblioteca
+padrão: o print (no Python 3, ele passa ao status de função), input, open para abrir um arquivo, len, max, min, type, range
+dentre outros. Essas são algumas das funções built-in - e a única diferença delas para qualquer outra função é que estão
+disponíveis automaticamente em qualquer módulo ou contexto.
+A existência dessas funções (e outras variáveis) built-in é o que torna possível em Python, ter um programa que abre um
+arquivo para escrita e grava algum conteúdo no mesmo em uma única linha - enquanto que em Java, por exemplo,, a mesma
+operação - que é uma das coisas mais fundamentais para um programa: interagir com o ambiente - isso requer a importação
+de duas classes de módulos distintos, e criação de uma instância das mesmas - apenas para começar a interagir com o
+arquivo - e a 2-documentação para achar essas classes sequer é trivial de achar. Em Python isso requer apenas
+open("meuarq.txt").write("Alô mundo!") - o open é uma built-in.
+Agora, a história não termina aí: Python tem um design bem interessante e consistente de busca de nomes de funções e
+variáveis - que dá ao programador controle completo sobre o que "existe" num determinado escopo do programa. O mecanismo
+completo é mais ou menos esse: ao encontrar um nome de função (ou outro objeto), o runtime do Python verifica primeiro
+se aquele nome existe nas variáveis locais (dentro da função em execução, por exemplo). Senão existir, ele busca nas
+variáveis "globais" - que são globais em um módulo - em geral nomes de funções e classes definidos pelo programador
+ficam nesse escopo. Se o nome não é encontrado em nenhum desses dois lugares, o Python faz a busca no módulo
+__builtins__ - onde estão definidas todas essas funções.
+Isso permite, por exemplo, que para fins de testes, brincadeiras, ou até modificação temporaria do comportamento de uma
+função real, você altere o valor de uma função "built-in" simplesmente criando uma outra função com o mesmo nome.
+A função será criada como uma variável global ou local, e pode ser usada normalmente - até ser excluida, por exemplo,
+com o comando "del" - nesse ponto, a definição original em __builtins__ volta a ser usada.
+Isso permite por exemplo, que se escreva código que funcione ao mesmo tempo em Python 2.7 e 3.X, redefinindo-se no
+começo do módulo o nome "input" para ser "raw_input" se estivermos em Python 2 - aí seu programa pode usar o "input" e
+funcionar normalmente em Python 2 - mas usando já o nome moderno da função
+
