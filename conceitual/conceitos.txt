@@ -43,10 +43,11 @@ atributos de dados (data attributs), ou atributos de instancia, atributos de obj
 -de instancia
 -dinamicos
 (sub categoria de atributos de instancia)
-
 #interpretador python busca os atributos primeiro nos atributos de instancia, depois nos de classe
 os atributos de classe são refenciados pelos objetos dessa classe.
 
+    *composição
+é quando um objeto recebe como parametros, outros objetos, e compoe com eles a solução do problema.
 
 *---------------------------------------------fatiar x indexar--------------------------------------------------
 fatiar[1:3]
