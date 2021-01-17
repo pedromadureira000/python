@@ -88,9 +88,23 @@ O   L
     >>> carro.calcular_direcao()
     'Oeste'
 """
+NORTE = "NORTE"
+SUL = "SUL"
+LESTE = "LESTE"
+OESTE = "OESTE"
+
+class Direcao:
+    def __init__(self):
+        self.valor = None
+    pass
+
 
 class Motor:
+
     def __init__(self):
+        pass
+        pass
+        pass
         self.velocidade = 0
 
     pass
