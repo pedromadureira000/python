@@ -1,29 +1,18 @@
                                          ATALHOS
 
-control+shift+f12 = "entra no modo edição"
+control+shift+f12: "entra no modo edição"
 
-alt + clit multiplica cursores
+alt + clit: multiplica cursores
 
 control +shit +j : juntar linhas
 
-alt+enter = manda parametro no inicio do metodo para o __init__
-
-
-
-
-
-
-
-
-
+alt+enter = The Problem-solving Shortcut
 
 
                                      CONFIGURAÇÕES
 
 
 fonte de texto do pycharm:  control + alt +s  /editor/fonts
-
-
 
 
                                        OUTROS
