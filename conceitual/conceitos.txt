@@ -1,4 +1,4 @@
-*--------------------paradigma procedural----------------
+*--------------------/paradigma procedural/----------------
     *tipos basicos
 
 inteiro
@@ -36,9 +36,11 @@ empacotamento e desenpacotamento
 atributos de metodos, ou so metodos
 atributos de dados (data attributs), ou atributos de instancia, atributos de objeto
 
-----------paradigma orientado a objetos---------
+*-------------------/paradigma orientado a objetos/---------
 
 	*atributos
+
+    /categoria:
 -de classe
 -de instancia
 -dinamicos
@@ -46,8 +48,33 @@ atributos de dados (data attributs), ou atributos de instancia, atributos de obj
 #interpretador python busca os atributos primeiro nos atributos de instancia, depois nos de classe
 os atributos de classe são refenciados pelos objetos dessa classe.
 
+    /tipo:
+-de dados
+-metodo
+
     *composição
 é quando um objeto recebe como parametros, outros objetos, e compoe com eles a solução do problema.
+
+            SOBRESCRITA
+
+    *sobrescrita de atributo de dados de classe
+se vc sobrescreve um atributo de dado de classe, quando o atributo for chamado vai ser passado esse
+valor sobrescrito no lugar do atributo original da classe herdada.
+
+    *sobrescrita de metodo:
+mesma coisa q a de atributo
+
+    *modificação de um metodo de uma classe pai:
+
+class Filho(Pai):
+    def metodo(self):
+        metodo_da_classe_pai = super().metodo(self)
+        return f'{metodo_da_classe_pai}. Coloque aqui o codigo adicional'
+
+    *atributo de classe protegido:é uma convenção que indica que o atributo nao deve ser acessado de fora
+da classe ou subclasses, porem o atributo continua podendo ser acessado, portanto é apenas uma convenção.
+A forma de indicar um atributo protegido é "_nomedoatributoprotegido"
+
 
 *---------------------------------------------fatiar x indexar--------------------------------------------------
 fatiar[1:3]
