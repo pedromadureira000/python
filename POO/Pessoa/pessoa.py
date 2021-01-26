@@ -23,8 +23,6 @@ class Homem(Pessoa):
         metodo_da_classe_pai = super().cumprimentar()
         return f'{metodo_da_classe_pai}. Coloque aqui o codigo adicional'
 
-
-
 if __name__ == '__main__':
     pedro = Homem(nome="Pedro")
     henrique = Homem(nome="Henrique")
