@@ -1,0 +1,20 @@
+vc pode configurar o git para sempre incluir certos arquivos no gitignore atravez do .gitignore_global
+
+crie no seu diretorio barra o arquivo ".gitignore_global"  com algumas configurações
+{
+#pycharm files
+.idea/
+*.sqlite3
+
+#binarios
+bin/
+}
+para informar ao git para ignorar os arquivos globalmente rode o comando
+
+git config --global core.excludesfile ~/.gitignore_global
+
+    JA VERSONEI O .idea NO MEU REPOSITORIO.
+
+no diretorio do projeto rode o comando: git rm -r .idea
+
+
