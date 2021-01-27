@@ -13,8 +13,9 @@ para informar ao git para ignorar os arquivos globalmente rode o comando
 
 git config --global core.excludesfile ~/.gitignore_global
 
-    JA VERSONEI O .idea NO MEU REPOSITORIO.
+    Problema: (JA VERSONEI O .idea NO MEU REPOSITORIO, como remover?)
 
 no diretorio do projeto rode o comando: git rm -r .idea
+apos isso dê um commit, e em seguida adicione o codigo acima no .gitignore_global
 
 
