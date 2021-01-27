@@ -1,0 +1,3 @@
+Mensagem apos criar uma branch apartir da branch "master" ="Checked out new branch ramo from HEAD"
+Mensagem da aula pythontools(Feature Branch) apos criar uma branch apartir da branch "master" do projeto que é um
+fork: "branch ramo was created".

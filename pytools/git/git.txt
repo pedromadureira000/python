@@ -1,3 +1,6 @@
+-------------/push
+"master -> origin : master"
+
 -----------/issues
 
 *vc pode referenciar a issue no commit/push com "close #<id da issue>", caso a pull request seja incorporada na upstream
@@ -23,26 +26,33 @@ por q vc alterou o historico do projeto
 
 -----------/branch
 
-*vc pode conferir a branch clicando no canto inferior direito em (main). Assim vc vai ver as branchs locais e remotas.
-EX: local: main , remote: origin/main
+*vc pode conferir a branch clicando no canto inferior direito em (master). Assim vc vai ver as branchs locais e remotas.
+EX: local: master -> remote: origin/master
 
 *vc pode conferir as branchs locais com o comando "git branch", ou locais e remotas com "git branch --all"
 
 *o nome "origin" é um apelido para o seu repositorio remoto, vc consegue conferir o link do seu repositorio remoto
-com "git remote -v", quando vc da um "git clone" vc nao apenas clona o repositorio, como tbm conecta o seu repositorio
+com "git remote -v"
+
+*quando vc da um "git clone" vc nao apenas clona o repositorio, como tbm conecta o seu repositorio
 local com o respositorio remoto
 
 *git push: "git push" faz um "git push origin master" que faz o push para o repositorio "origin" na branch "master"
 
-*no caso do seu repositorio origin for um fork, vc pode adicionar a referencia ao repositorio original, que normalmente é
-chamado de "upstream"
+*no caso do seu repositorio origin for um fork de outro repositorio remoto, vc pode adicionar esse repositorio original,
+ que normalmente é chamado de "upstream", da seguinte forma:
 
--Vc pode fazer iso com o comando git remote add upstream git@github.com:nomedogrupo/nomedoprojeto.git
--ou atravez do pycharm: git/manage remotes/
+-com o comando git remote add upstream git@github.com:nomedogrupo/nomedoprojeto.git
+-atravez do pycharm: git/manage remotes/
 
-*fetch: carrega as mudanças nos repositorios remotos para o seu ambiente local. Vc deve fazer isso para carregar o
+
+------------------/fetch:
+
+*carrega as mudanças nos repositorios remotos para o seu ambiente local. Vc deve fazer isso para carregar o
 repositorio upstream, uma vez q vc adicionou esse repositorio com "git remote add"
 -caminho pycharm: git/fetch
+
+-----------------/criando nova Branch e entrando nela
 
 *Criando nova branch:
 caminho: canto inferior direito clique no icone do git.
@@ -50,41 +60,32 @@ caminho: canto inferior direito clique no icone do git.
 *Acessando a nova branch:
 -caminho: canto inferior direito clique no icone do git >checkout
 
-*recriando branch main local, apartir da branch main de upstream:
-
---------/push na upstream para seu fork
-
-*as vezes vc vai querer reverter mudanças no seu branch main q nao foram aceitas em um pull request para upstream, ou
-apenas carregar mudanças da upstream, então vc pode recriar a branch main no seu repositorio local pegando o repositorio
-da upstream e dar push nesse main para seu repositorio fork (pode ser q tenha q dar um "force push" se tiver de recriar
-o historico. Cuidado para nao enviar para upstream ao invez da origin, confira o caminho no campo superior do push
-"main -> origin : main").
 
 --------/feature branch
 
 *é uma metodologia de criar uma branch para cada implementação de feature associada a uma issue. Dessa forma vc faz o
 pull request para a branch upstream, e caso seja rejeitado, vc apenas precisa apagar a "feature branch" ao invez de
-retroceder a sua branch origin : main
+retroceder a sua branch origin : master
 
-*A branch main deve sempre ficar sincronizada com a upstream, para vc n ter q ficar revertendo codigo.
+*A branch master (origin) deve sempre ficar sincronizada com a upstream, para vc n ter q ficar revertendo codigo.
 
-*se o pull request da feature branch for aceito e tiver sido merged, vc deve deletar a sua feature branch, dar um
-fetch na branch remota (git fetch upstream), e dar um merge da sua branch "local main" com a "remote main upstream"
-(caso esteja checked com a local main vá ate "upstream : main", e selecione a opção de merge"). Apos isso dê um push
- para sua origin:
+*se o pull request da feature branch for aceito e tiver sido incorporado na master upstream, vc deve deletar a sua feature
+branch, dar um fetch na branch remota (comando: git fetch upstream), e dar um merge da sua branch master local com a
+"remote master upstream" (caso vc esteja na local master vá ate "upstream/master", e selecione a opção merge).
+Apos isso dê um push para sua origin:
 
 
                                     /--------Resoluções de erros--------/
 
 
---------/criação e checkout de branch main apartir do repositorio remoto original, sem ter comitado a branch ramo
+--------/criação e checkout de branch master apartir do repositorio remoto original, sem ter comitado a branch ramo
 
-quando o ramo da branch main é modificado sem ser comitado, e eu tento criar um novo main (apos ter
+quando o ramo da branch master é modificado sem ser comitado, e eu tento criar um novo master (apos ter
 deletado o antigo)com a opção "checkout branck" marcada, acontece um conflito de versoes, onde posso:
 
-*force chekout:  deleta as mudanças nao comitadas do ramo e cria o main apartir do repositorio remoto, e da um chekout nele(entra nele).
+*force chekout:  deleta as mudanças nao comitadas do ramo e cria o master apartir do repositorio remoto, e da um chekout nele(entra nele).
 
-* smart chekout: abrira o patch conflit, mostrando a versao do main q vc esta criando a direita(do jeito q veio do repositorio remoto), a versao do ramo que vc n comitou a esquerda, e o resultado no meio( que vai ser sobreposto no main que vc esta criando.)
+* smart chekout: abrira o patch conflit, mostrando a versao do master q vc esta criando a direita(do jeito q veio do repositorio remoto), a versao do ramo que vc n comitou a esquerda, e o resultado no meio( que vai ser sobreposto no main que vc esta criando.)
 
 -se vc enviar as modificações nao comitadas pro resultado e aplicar, as modificações nao comitadas do ramo vao ser sobrescritas pela ultima versao comitada da branch ramo, e vai ser enviadas pra branch q vc esta criando
 
@@ -92,15 +93,12 @@ OBS: sempre que vc tenta dar checkout numa branch sem comitar modificações da 
 "git checkout problem"
 
 resumo: basicamente ele pergunta se vc quer enviar as modificações comitadas da branch ramo e as nao
-comitadas para a branch main q vc esta criando, e a branch ramo vai ser sobrescrita pela ultima versao
+comitadas para a branch master q vc esta criando, e a branch ramo vai ser sobrescrita pela ultima versao
 comitada.
 
 
 
-------------/DUVIDAS
-    Mensagem apos criar uma branch apartir da branch "main" ="Checked out new branch ramo from HEAD"
-    Mensagem da aula pythontools(Feature Branch) apos criar uma branch apartir da branch "main" do projeto que é um
-    fork: "branch ramo was created".
+
 
 
 
