@@ -75,6 +75,11 @@ class Filho(Pai):
 da classe ou subclasses, porem o atributo continua podendo ser acessado, portanto é apenas uma convenção.
 A forma de indicar um atributo protegido é "_nomedoatributoprotegido"
 
+    Resumo:
+composição
+herança
+sobrecrita: de atributo de classe ou de metodo
+framework basico de teste unittest
 
 *---------------------------------------------fatiar x indexar--------------------------------------------------
 fatiar[1:3]
