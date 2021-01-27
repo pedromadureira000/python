@@ -17,5 +17,6 @@ git config --global core.excludesfile ~/.gitignore_global
 
 no diretorio do projeto rode o comando: git rm -r .idea
 apos isso dê um commit, e em seguida adicione o codigo acima no .gitignore_global
+OBS: nao funciona na hora, apos dar outro commit ou reiniciar a IDE vai funcionar.
 
 
