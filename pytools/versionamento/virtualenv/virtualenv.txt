@@ -1,0 +1,36 @@
+-----/Cria virtualenv
+
+python3 -m venv nomedavenv
+
+“cria a virtual env usando a versao do python3 setada pelo pyenv”
+
+
+-----/ativar a virtualenv
+
+source nomedavenv/bin/activate
+
+conferir o python
+
+python -V   (mostrara a versão setada pelo pyenv para o pyton3 ou python2, dependendo de qual vc usou pra criar a virtualenv)
+
+which python (mostra o path do python da venv)
+
+
+-----/desativar a virtualenv
+
+deactivate
+
+
+-----/criando virtualenv com python2
+
+
+python2 -m pip install virtualenv  (tem q instalar para o python2, nao vem junto com o pyenv)
+
+python2 -m virtualenv venv2   (para criar a virtualenv o comando é diferente para o python2)
+
+
+-----/criando virtualenv no pycharm
+
+-control + shift +s, procure por interpreter, vá em existin enviroment, e procure pelo python q vc quer
+
+-Vc tbm pode criar com comando no terminal e selecionar essa venv no config/interpreter/ add/ existin enviroment/   e procurar o .venv q vc criou na pasta do seu projeto

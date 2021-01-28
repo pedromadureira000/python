@@ -1,0 +1,26 @@
+# Ele seta a versao do python que vc quiser por usuario, sem comprometer o python do sistema
+
+
+--------/Instalação de versão do python:
+
+pyenv install -l   (listar as verções)
+pyenv install <versao>
+
+--------/Setando python global:
+
+pyenv global <versao>
+
+(da pra setar multiplas versões,)
+pyenv global 3.6.5 2.7.18     #dessa forma vc tera em python2, o python 2.7.18
+
+--------/Conferir versões instaladas:
+
+pyenv versions
+
+--------/Conferir versão atual:
+which python
+
+--------/Conferir versão do python usada pelo sistema no momento
+python -V
+
+
