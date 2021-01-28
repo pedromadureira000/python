@@ -1,0 +1,6 @@
+----/requiremmnts
+pip freeze : conferir as bibliotecas instaladas na sua virtualenv
+pip freeze > requirements.txt  : cria arquivo com as dependencias (mande pra raiz do seu projeto)
+
+
+

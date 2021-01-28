@@ -34,3 +34,8 @@ python2 -m virtualenv venv2   (para criar a virtualenv o comando é diferente pa
 -control + shift +s, procure por interpreter, vá em existin enviroment, e procure pelo python q vc quer
 
 -Vc tbm pode criar com comando no terminal e selecionar essa venv no config/interpreter/ add/ existin enviroment/   e procurar o .venv q vc criou na pasta do seu projeto
+
+
+-------/obs
+
+apos ter setado uma virtualenv pro projeto, essa venv vai entrar automaticamente quando abrir no projeto
