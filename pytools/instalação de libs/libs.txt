@@ -1,6 +1,8 @@
 ----/requiremmnts
+python3 -m venv .venv
+source .venv/bin/activate
 pip freeze : conferir as bibliotecas instaladas na sua virtualenv
 pip freeze > requirements.txt  : cria arquivo com as dependencias (mande pra raiz do seu projeto)
-
+pip install -r requirements.txt
 
 
