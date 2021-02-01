@@ -1,0 +1,11 @@
+o flake8 avalia o codigo para ver se esta de acordo com a pep8
+
+para ignorar algumas partes do seu diretorio raiz, crie um arquivo ".flake8"
+Exemplo de .flake8   (o max-line-lenght é 79)
+{
+[flake8]
+max-line-lenght = 120
+exclude = .venv
+}
+
+rode o flake8 com comando "flake8"
