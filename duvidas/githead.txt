@@ -1,1 +1,0 @@
-Mensagem apos criar uma branch apartir da branch "master" ="Checked out new branch ramo from HEAD"

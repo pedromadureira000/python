@@ -1,1 +1,0 @@
-por q o pycharm destaca o .venv em pythonlib se deveria ignorar.

@@ -1,0 +1,16 @@
+link do site  https://travis-ci.com/
+ative o repositorio que vc quer pelo site
+adicione o arquivo de configuração do travis na raiz do seu projeto ".travis.yml"
+exemplo de .travis.yml, rodando em duas versões de python, instalando um requirement que chama outro requirement(so
+adicionar -r requirement.txt no final) para separar o requirement do desenvolvedor do codigo final, e rodando o flake8
+para inspecionar o codigo de acordo com o PEP8:
+[
+language: python
+python:
+  - 3.6
+  - 2.7
+install:
+  - pip install -r requirements_dev.txt
+script:
+  - flake8
+]
