@@ -1,0 +1,6 @@
+pyup é um sistema que verifica a versão das dependencias "requirements" do seu projeto, e automaticamente cria pull
+requests atualizando essas dependencias no seu requirements.txt
+
+vc pode por o distintivo do pyup para mostrar se as libs estam atualizadas, e o distintivo q mostra se as libs rodam em
+python3, é bom colocar como markdonw no README.
+

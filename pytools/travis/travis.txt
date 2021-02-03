@@ -1,4 +1,8 @@
 link do site  https://travis-ci.com/
+
+O travis é um servidor de integração continua.
+
+
 ative o repositorio que vc quer pelo site
 adicione o arquivo de configuração do travis na raiz do seu projeto ".travis.yml"
 exemplo de .travis.yml, rodando em duas versões de python, instalando um requirement que chama outro requirement(so
