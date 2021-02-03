@@ -1,6 +1,7 @@
 vc pode configurar o git para sempre incluir certos arquivos no gitignore atravez do .gitignore_global
 
 crie no seu diretorio barra o arquivo ".gitignore_global"  com algumas configurações
+sudo nano .gitignore_global
 {
 #pycharm files
 .idea/
