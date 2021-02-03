@@ -6,3 +6,12 @@ pip freeze > requirements.txt  : cria arquivo com as dependencias (mande pra rai
 pip install -r requirements.txt
 
 
+----/checar bibliotecas desatualizadas com pip
+pip list --outdated
+
+ou
+
+pip list -o
+
+
+
