@@ -1,3 +1,6 @@
+----/pip
+o comando "pip install" procura os pacotes de terceiros em pypi.org
+
 ----/requiremmnts
 python3 -m venv .venv
 source .venv/bin/activate
