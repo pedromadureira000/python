@@ -11,3 +11,7 @@ atualizada como dependencia de outra lib (ex: pystyle com flake8), o travis vai 
 
 vc pode fechar a branch que o pyup criou, que vai ter juntado as todas as atualzações em uma so branch. E o pyup vai
 criar novas branchs com as atualizações das libs separadas. Nesse caso escolha apenas a que não quebra o codigo.
+
+    OBSERVAÇÃO DA PULL REQUEST INICIAL DO PYUP COM ARQUIVO DE CONFIGURAÇÃO .pyup.yml SEM ATULIZAÇÃO DE LIB
+
+a primeira pull request cria apenas o .pyup.yml
