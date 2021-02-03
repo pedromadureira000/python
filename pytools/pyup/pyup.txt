@@ -1,6 +1,13 @@
 pyup é um sistema que verifica a versão das dependencias "requirements" do seu projeto, e automaticamente cria pull
-requests atualizando essas dependencias no seu requirements.txt
+requests com essas atualizações de libs dos seus requirements.txt
 
 vc pode por o distintivo do pyup para mostrar se as libs estam atualizadas, e o distintivo q mostra se as libs rodam em
 python3, é bom colocar como markdonw no README.
 
+se vc estiver usando o travis, o e pull request do pyup quebrar seu codigo por atualizar uma lib que é ainda nao foi
+atualizada como dependencia de outra lib (ex: pystyle com flake8), o travis vai mostrar o erro.
+
+    PROBLEMA DA AVALIAÇÃO INICIAL DO PYUP COM LIB QUEBRANDO O PROJETO + LIB QUE VC QUER ATUALIZAR
+
+vc pode fechar a branch que o pyup criou, que vai ter juntado as todas as atualzações em uma so branch. E o pyup vai
+criar novas branchs com as atualizações das libs separadas. Nesse caso escolha apenas a que não quebra o codigo.

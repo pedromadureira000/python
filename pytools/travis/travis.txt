@@ -1,7 +1,7 @@
 link do site  https://travis-ci.com/
 
-O travis é um servidor de integração continua.
-
+O travis é um servidor de integração continua. Ele verifica todos os pullrequests e se algo não passar nos testes ele
+bloqueia o pull request e mostra o que deu errado.
 
 ative o repositorio que vc quer pelo site
 adicione o arquivo de configuração do travis na raiz do seu projeto ".travis.yml"
