@@ -1,0 +1,56 @@
+A criação do setup.py é necessaria para publicar o projeto no pypi, permitindo assim que ele possa ser baixado
+normalmente pelo pip
+
+A criação do setup.py seria apenas para uma publicação no pypi?
+
+Não, tem gente que cria sempre um setup para colocar dependências de alto nível e até para adicionar comandos ao seu
+ambiente virtual. Vc pode com um setup.py fazer um pip install <diretório> que ele instala baseado no arquivo. Não é o
+foco desse curso, mas ele permite a vc criar comandos que ficam disponíveis quando a lib é instalada via setup.py.
+
+
+
+------------/ Criação do setup.py
+
+    Exemplo de arquivo setup.py
+https://github.com/pythonprobr/libpythonpro/blob/master/setup.py
+
+    Lista de classificadores
+https://pypi.org/pypi?%3Aaction=list_classifiers
+
+
+----------/campo  "install_requires"
+
+nesse campo vc coloca as bibliotecas que seu projeto usa. Vc nao deve colocar da mesma forma que esta no seu
+requirements.txt, pois o requirements não fica disponivel em termos de pacote no pypi, ele é usado por alguem que quer
+fazer melhorias na biblioteca. Quando estamos falando de setup.py, estamos falando que alguem vai utilizar a nossa
+biblioteca instalando do pypi, a ideia não é ter um build deterministico, mas sim a utilização da sua biblioteca.
+
+Portanto vc coloca as dependencias "em alto nivel", sem colocar a versão EX 'requests'. Ou pode colocar a versão minima
+EX: 'requests>=2.18.4'
+OBS: quando vc esta trabalhando com o projeto vc quer ter um built deterministico, e quando vc esta pensando na
+utilização da biblioteca atravez do pypi,
+
+--------/testando o setup.py localmente
+quando vc tem dentro do projeto um setup.py, vc conseque instalar a partir do diretorio
+crie uma virtualenv no diretorio de projetos o pycharm, ative a venv, rode o comando "pip install -e ./libpythoph" -e de
+editable, faz com que pip vai rodar o projeto atravez do seus arquivos, é bom pra qunado vc esta desenvolvendo features
+do projeto e testando o resultado.
+
+------/dependencias transitivas
+sao as dependencias que um pacote depende, como urlib3 para requests
+são dependencias indiretas para o projeto pythontools, por exemplo.
+
+
+-------/egg
+quando vc instala o pacote libpythonph, como mostrado acima em (testando o setup.py localmente), é criado um "egg" que
+é um é uma estrutura lógica que incorpora o lançamento de uma versão específica de um projeto Python, incluindo seu
+código, recursos e metadados.
+Existem vários formatos que podem ser usados ​​para codificar fisicamente um ovo Python, e outros podem ser
+desenvolvidos. No entanto, um princípio fundamental dos ovos Python é que eles devem ser detectáveis e importáveis. Ou
+seja, deve ser possível para um aplicativo Python descobrir de maneira fácil e eficiente quais ovos estão presentes em
+um sistema e garantir que o conteúdo dos ovos desejados seja importável.
+
+O formato .egg é adequado para distribuição e fácil desinstalação ou atualização de código, uma vez que o projeto é
+essencialmente autocontido em um único diretório ou arquivo, não misturado com qualquer código ou recursos de outros
+projetos. Também torna possível ter várias versões de um projeto instaladas simultaneamente, de modo que programas
+individuais possam selecionar as versões que desejam usar.
