@@ -60,19 +60,28 @@ vc pega o o url do pacote no campo code>tag de um projeto no github
 pip install https://github.com/pedromadureira000/pytools/archive/0.1.zip
 
 
------/Publicação no PyPi
-primeira coisa é ter uma conta no pypi
+-----/Publicação de release no PyPi
+1º) ter uma conta no pypi
 
-O segundo passo é criar uma distribuição do seu projeto, um empacotamento. Para fazer isso rode o comando:
+2º) criar uma distribuição do seu projeto, um empacotamento. Para fazer isso rode o comando:
 "python setup.py sdist"
 o sdist vai criar um diretorio com a sua distribuição empacotada, contendo todas as informações e meta informações do
 seu pacote.
 OBS: o modulo distutils sempre da um erro (Unknown distribution option: 'long_description_content_type') mas vc pode
 ignorar isso
 
-Apos isso, para fazer a publicação vc precisa instalar uma lib chamada twine
+3º) para fazer a publicação vc precisa instalar uma lib chamada twine
 pip install twine
 twine upload dist/*   (vai enviar para o pypi os arquivos do diretorio dist, que é onde esta a disrtibuição enpacotada que
 vc criou)
 OBS: o upload dara erro caso o campo licence do seu setup.py faça referencia ao arquivo LICENCE, ao invez disso ponha
 uma string. EX: (license="GNU AFFERO GENERAL PUBLIC LICENSE",)
+
+*OBS: antigamente o README.md nem o LICENSE iriam junto do arquivo compactado do projeto ao rodar o comando, no entanto
+atualmente ao rodar esse comando o README.md esta sendo enviado dentro do arquivo compactado no diretorio dist. Em relação
+ao LICENSE, é possivel nao fazer referencia a ele no setup.py, e ao invez disso colocar uma string com a licensa, então
+nao tera problema com isso.
+
+----/publicar novo release
+mudar versão em __licence__, criar um novo setup empacotado com "python setup.py sdist",
+e enviar ao pypi com twine
