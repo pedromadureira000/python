@@ -1,0 +1,7 @@
+vc pode criar e enviar uma tag de versao do projeto com os comandos:
+
+git tag <Nº da tag>
+git push --tags
+
+
+Essa tag ira conter uma versao empacotada do seu projeto no momento que vc subio a tag

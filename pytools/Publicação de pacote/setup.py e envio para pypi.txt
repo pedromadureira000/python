@@ -54,3 +54,10 @@ O formato .egg é adequado para distribuição e fácil desinstalação ou atual
 essencialmente autocontido em um único diretório ou arquivo, não misturado com qualquer código ou recursos de outros
 projetos. Também torna possível ter várias versões de um projeto instaladas simultaneamente, de modo que programas
 individuais possam selecionar as versões que desejam usar.
+
+-----/instalação por link de arquivo zip (arquivo criado a partir de tag)
+vc pega o o url do pacote no campo code>tag de um projeto no github
+pip install https://github.com/pedromadureira000/pytools/archive/0.1.zip
+
+
+
