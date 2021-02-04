@@ -1,0 +1,14 @@
+*trabalho em keep
+
+*modelo de feature branch
+
+*isolamento do ambiente:
+
+para nao interagir com o python do sistema operacional
+
+*integração continua (travis.ci + pyup)
+
+automatiza operações manuais
+
+*postar uma biblioteca no pypi
+com twine
