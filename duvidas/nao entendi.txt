@@ -1,1 +1,0 @@
-https://www.python.pro.br/modulos/pytools/topicos/upgrade-de-dependencias
