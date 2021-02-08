@@ -1,0 +1,7 @@
+A tag ira conter uma versao empacotada do seu projeto no momento que vc subio a tag
+vc pode criar tag e enviala pro git com os comandos
+
+git tag <Nº da tag>
+git push --tags
+
+Vc tbm pode fazer isso pelo pycharm, e tem q dar push marcando a opção de enviar tag pra funcionar

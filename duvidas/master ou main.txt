@@ -1,2 +1,0 @@
-por que nos meus repositorios as vezes "master" se chama "main"? qual a diferença entre esses dois?
-quando eu deleto um arquivo no github, eu dou commit direto na "main branch".

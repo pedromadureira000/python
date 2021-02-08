@@ -1,1 +1,0 @@
-push é enviar o commit para a branch que originou a branch que eu dei o puch?
