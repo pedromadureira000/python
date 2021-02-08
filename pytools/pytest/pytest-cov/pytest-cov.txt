@@ -1,0 +1,5 @@
+pip install pytest-cov
+adicione no requiremments-dev do seu projeto
+
+#rodar o pytest-cov no terminal (no parametro --cov , coloque o diretorio que vc quer cobrir de testes)
+pytest libpythonph --cov=libpythonph
