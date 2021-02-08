@@ -1,0 +1,17 @@
+pip install pytest
+adicione o pytest no seu requiremments
+crie um pacote com o prefixo "test", e ponha os modulos de testes dentro dele (tbm com prefixo "test")
+crie uma função para fazer o test começando com o prefixo "test"
+EX:
+def test_int():
+    assert 1==1
+
+#rodar o pytest no terminal
+pytest nomedopacote
+pytest nomedopacote/nomedomodulo
+
+#rodar o pytest no pycharm
+configure o pytest:settings/tools/python integrated tools/default test runner>py.test
+para rodar é iqual ao unittest, basta clicar no pacote/modulo/função
+OBS: o running do pytest tbm roda testes escritos no formato do unittest
+
