@@ -2,4 +2,8 @@ pip install pytest-cov
 adicione no requiremments-dev do seu projeto
 
 #rodar o pytest-cov no terminal (no parametro --cov , coloque o diretorio que vc quer cobrir de testes)
+pytest nomedopacote --cov=nomedopacote
+
+
+#adicionar o pytest-cov no Travis: apenas reescreva o comando do pytest EX:
 pytest libpythonph --cov=libpythonph
