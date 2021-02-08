@@ -1,2 +1,2 @@
-ao dar um push, tem a opção "amend commit"
-reescreve o historico da branch, precisa force push
+ao dar um commit, tem a opção "amend commit"
+reescreve o historico da branch, serve pra concertar um commit, precisa force push
