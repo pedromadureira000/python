@@ -8,6 +8,7 @@ control +shit +j : juntar linhas
 
 alt+enter = The Problem-solving Shortcut
 
+mover metodo para outro modulo: f6
 
                                      CONFIGURAÇÕES
 
