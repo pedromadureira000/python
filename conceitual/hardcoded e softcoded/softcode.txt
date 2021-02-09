@@ -1,0 +1,4 @@
+Softcoding é um termo de codificação de computador que se refere à obtenção de um valor ou função de algum recurso
+externo, como arquivos de texto, arquivos INI, macros de pré-processador, constantes externas, arquivos de configuração,
+argumentos de linha de comando, bancos de dados, entrada do usuário, respostas do servidor HTTP. É o oposto de
+hardcoding, que se refere aos valores e funções de codificação no código-fonte.

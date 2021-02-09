@@ -1,0 +1,7 @@
+Desenvolvimento Orientado a Testes, do inglês Test Driven Development (TDD) + Baby Steps
+
+#1) crie em um diretorio test o modulo de test. Dentro dele vc vai montando o resultado que quer, e utiliza os erros do
+pytest para criar o que precisa.
+
+#2) use asserte para realizar testes:
+assert 'joaozinho@gmail.com' in resultado
