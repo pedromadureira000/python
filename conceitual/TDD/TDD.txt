@@ -8,3 +8,18 @@ pytest para criar o que precisa.
 
 #2) use asserte para realizar testes:
 assert 'joaozinho@gmail.com' in resultado
+
+#3) use refactor>introduce variable: para adicionar variaveis a partir de valores "harcoded"
+
+#4) use @pytest.mark.parametrize
+
+#5) teste de exceções com pytest usando gerenciador de contexto
+EX: pytools/libpythonph/tests/test_spam/test_enviador_email.py>test_remetente_invalido
+    with pytest.raises(EmailInvalido):
+        enviador.enviar(
+            destinatario,
+            'pedrinho@gmail.com',
+            'Assunto',
+            'corpo da mensagem'
+        )
+Serve para se certificar que as exceções que devem ser lançadas no seu codigo, ocorreram com sucesso
