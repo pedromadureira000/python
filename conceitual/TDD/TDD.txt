@@ -1,4 +1,7 @@
 Desenvolvimento Orientado a Testes, do inglês Test Driven Development (TDD) + Baby Steps
+-O principio de baby steps permite que vc vá aos poucos deliniando seu problema, entendendo o que ele faz, e focando em
+ações pequenas e incisivas, e o seu teste vai moldando o seu codigo. Tabém serve para garantir que ele continue
+funcionando como deveria quando novas funcionalidades forem enceridas.
 
 #1) crie em um diretorio test o modulo de test. Dentro dele vc vai montando o resultado que quer, e utiliza os erros do
 pytest para criar o que precisa.
