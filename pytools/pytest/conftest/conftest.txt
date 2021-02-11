@@ -1,0 +1,2 @@
+é uma forma de disponibilizar uma feature para todos os modulos de um pacote e seus subpacotes.
+para isso vc adiciona as features em um modulo chamado "conftest.py",

@@ -1,0 +1,1 @@
+no pytest tod0 parametro de função é uma ficture?
