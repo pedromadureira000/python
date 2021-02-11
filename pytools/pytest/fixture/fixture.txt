@@ -1,0 +1,3 @@
+A fixture isola e encapsula a parte de "setup" e "tear down" de testes que utilizam bancos de dados.
+
+Ver repositorio pytools/
