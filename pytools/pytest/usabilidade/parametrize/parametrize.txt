@@ -1,0 +1,15 @@
+decorator que realiza multiplos testes usando uma lista de parametros
+Ex:
+
+@pytest.mark.parametrize(
+    'destinatario',['joaozinho@gmail.com','lerolero@aa.com']
+)
+def test_remetente(destinatario):
+    enviador = Enviador()
+    destinatarios = ['joaozinho@gmail.com','lerolero@aa.com']
+    resultado = enviador.enviar(
+        destinatario,
+        'pedrinho@gmail.com',
+        'Assunto',
+        'corpo da mensagem')
+    assert destinatario in resultado
