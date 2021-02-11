@@ -1,0 +1,12 @@
+Por padrão toda fixture é executada no escopo de função
+
+scope='function' = a fixture vai executar toda vez q o teste for executado
+EX: a sessão tem que ser criada para cada teste, e dps desfeita.
+
+scope='module'  = a função vai ser excutada apenas uma vez em cada um dos modulos onde ela for utilizada
+
+scope='session' = é uma sessão de teste, significa q se varios outros modulos estiverem utilizando ela, ela vai ser
+executada apenas uma vez durante toda a sessão de teste, a feature vai ser executada apenas uma vez para cada
+
+
+ver pytools/libpythonph/tests/test_spam/test_usuarios.py
