@@ -1,0 +1,12 @@
+quando vc troca um objeto por outro (outro objetomock)
+
+from unittest.mock import mock
+
+mock = Mock()
+
+mock.executar_metodo()  #retorna outro mock como resultado, grava como ocorreu a execução
+
+mock.executar_metodo.assert_called_once_with()  #não vai dar erro, pois ele nao foi executado com nenhum parametro ainda
+
+mock.executar_metodo.assert_called_once_with("pedro") #vai retornar erro, pois foi chamado sem nenhum parametro
+
