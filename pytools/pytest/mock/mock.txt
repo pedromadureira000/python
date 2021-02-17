@@ -1,5 +1,8 @@
 quando vc troca um objeto por outro (outro objetomock)
 
+
+        BIBLIOTECA MOCK
+
 from unittest.mock import mock
 
 mock = Mock()
