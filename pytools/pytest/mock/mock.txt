@@ -2,6 +2,12 @@ quando vc troca um objeto por outro (outro objetomock)
 
 
         BIBLIOTECA MOCK
+from unittest.mock import mock
+o mock server para testar por ex:
+-quantas vezes o metodo é chamado
+-quais parametros foram passados pro metodo
+
+    EX:
 
 from unittest.mock import mock
 
