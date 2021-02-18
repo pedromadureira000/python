@@ -13,6 +13,12 @@ control + O: override method of superclass
 -para fazer isso tem q criar a classe usando "alt + enter" opçao(create class <classname>), mudar o nome "object"
 sublinhado automaticamente pelo nome da classe que quer herdar, dar um tab para passar a seleção para "pass", dar
 o comando "control + O"
+
+control + alt + v: extrair variavel ( de um dicionario por ex)
+
+control + shif: mover linha
+
+deletar linha:  shift + del
                                      CONFIGURAÇÕES
 
 
