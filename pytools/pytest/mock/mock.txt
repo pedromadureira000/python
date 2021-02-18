@@ -14,6 +14,7 @@ que é importada para para o modulo que vc esta importando no escopo atual de co
     RETURN_VALUE DO MOCK
 faz com quem seja retornado um valor expecifico ao executar um metodo
 ex:pythontools/libpythonph/git_hubapi.py   pythontools/libpythonph/tests/test_spam/test_github_api.py
+    AULA pyools>testes automaticos>injeção de dependencias>modulo como objeto
 
     resp_mock = Mock()
     resp_mock.json.return_value = {
