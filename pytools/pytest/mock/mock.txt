@@ -11,6 +11,21 @@ o mock server para testar por ex:
 vc pode atribuir um Mock com um retorno predefinido( Mock(return_value=nomedevariavel) a um metodo de uma biblioteca
 que é importada para para o modulo que vc esta importando no escopo atual de codigo.
 
+    RETURN_VALUE DO MOCK
+faz com quem seja retornado um valor expecifico ao executar um metodo
+ex:pythontools/libpythonph/git_hubapi.py   pythontools/libpythonph/tests/test_spam/test_github_api.py
+
+    resp_mock = Mock()
+    resp_mock.json.return_value = {
+        'login': 'renzo', 'id': 402714,
+        'avatar_url': 'https://avatars.githubusercontent.com/u/402714?v=4'
+    }
+!   resp_mock.json()['avatar_url']
+
+    git_hubapi.requests.get = Mock(return_value=resp_mock)
+!   git_hubapi.requests.get()
+
+
 ----------------------------------------
     EX:
 
