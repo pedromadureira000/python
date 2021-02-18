@@ -7,6 +7,11 @@ o mock server para testar por ex:
 -quantas vezes o metodo é chamado
 -quais parametros foram passados pro metodo
 
+    MODULO COMO OBJETO - REDEFININDO FUNÇÕES IMPORTADAS COM MOCK
+vc pode atribuir um Mock com um retorno predefinido( Mock(return_value=nomedevariavel) a um metodo de uma biblioteca
+que é importada para para o modulo que vc esta importando no escopo atual de codigo.
+
+----------------------------------------
     EX:
 
 from unittest.mock import mock
