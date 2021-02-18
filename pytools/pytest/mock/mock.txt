@@ -19,3 +19,5 @@ mock.executar_metodo.assert_called_once_with()  #não vai dar erro, pois ele nao
 
 mock.executar_metodo.assert_called_once_with("pedro") #vai retornar erro, pois foi chamado sem nenhum parametro
 
+-------------------------------------
+Ex: pytools/libpythonph/spam/main.py    pytools/libpythonph/test/testspam/test_envio_para_base_de_usuario.py

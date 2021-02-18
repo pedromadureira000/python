@@ -7,9 +7,10 @@ class Teste:
         self.parobjeto = parobjeto
 
 insobjeto = Objeto(1)
-insteste = Teste(insobjeto)
+a = [insobjeto,]
+insteste = Teste(a)
 
-print(id(insteste.parobjeto) , id(insobjeto.par))
+print(id(insteste.parobjeto) , id(insobjeto.par), id(a))
 insteste.parobjeto = 2
 print(insobjeto.par)
 assert insobjeto.par == insteste.parobjeto
