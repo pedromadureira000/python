@@ -1,2 +1,2 @@
 control + o
-nao funciona
+duvida de utilização

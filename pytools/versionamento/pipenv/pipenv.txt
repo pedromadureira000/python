@@ -1,0 +1,16 @@
+o objetivo do pipenv é não precisar mais trabalhar com o pip e o virtualenv de forma separada. Ajudar na administração
+dos arquivos com as nossas dependências(requiremments, requiremments-dev). Utiliza hashes para garantir a instalação
+segura dos pacotes.
+
+    TUTORIAL
+
+pip install pipenv  : instale o pipenv
+
+nano .bashrc  : edite a configuração para não criar a pasta do ambiente virtual na pasta unificada predefinida.
+-adicione a linha: export PIPENV_VENV_IN_PROJECT=1
+-source ~/.bashrc   :exportando a variavel de ambiente
+-echo $PIPENV_VENV_IN_PROJECT  :teste se a variavel esta funcionando (vai retornar 1)
+
+OBS: se o pipenv estiver pegando o python do sistema ao invez do python do pyenv adicione o caminho correto do python
+para o PIPENV no .bashrc
+-export PIPENV_PYTHON="/home/phsw/.pyenv/shims/python3.6"

@@ -1,0 +1,2 @@
+o pipenv estava usando o python do sistema ao invez do python do pyenv tive q adicionar a linha no .bashrc
+export PATH="/home/phsw/.pyenv/bin:$PATH"
