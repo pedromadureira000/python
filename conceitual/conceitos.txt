@@ -117,8 +117,8 @@ objeto.formata()    Chamada de metodo
 
 *enclosing functions: Nome no escopo local de todas e quaisquer funções encapsuladas
 
-*global(escopo de todo o modulo): nomes atribuidos no nivel superior de um arquivo de modulo, ou declarados como global, em um def dentro do arquivo.
-Variaveis globais são visiveis em todo o codigo. Podemos usar a funçaõ globals() para retornar um dicionario com todas as 1-variaveis globais.
+*global(escopo de tod0 o modulo): nomes atribuidos no nivel superior de um arquivo de modulo, ou declarados como global, em um def dentro do arquivo.
+Variaveis globais são visiveis em tod0 o codigo. Podemos usar a funçaõ globals() para retornar um dicionario com todas as 1-variaveis globais.
 
 *built-in(python): nomes pre-atribuidos no modulo open range, syntaxerror, ...
 
@@ -176,3 +176,11 @@ Isso permite por exemplo, que se escreva código que funcione ao mesmo tempo em 
 começo do módulo o nome "input" para ser "raw_input" se estivermos em Python 2 - aí seu programa pode usar o "input" e
 funcionar normalmente em Python 2 - mas usando já o nome moderno da função
 
+
+--------------------------------------/pytools/----------------------------------------
+vimos tudo sobre test automatico, criação de suíte de testes,
+
+*framework pytest: testes automaticos
+*fixtures: setup e teardown, eliminado duplicações no codigo de teste
+*injeção de dependencia: lib mock, para facilitar a troca de componentes de software para tornar o codigo testavel, e
+chegar no isolamento do nossos testes unitarios
