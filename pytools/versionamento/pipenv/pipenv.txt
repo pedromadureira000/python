@@ -2,7 +2,13 @@ o objetivo do pipenv é não precisar mais trabalhar com o pip e o virtualenv de
 dos arquivos com as nossas dependências(requiremments, requiremments-dev). Utiliza hashes para garantir a instalação
 segura dos pacotes.
 
-    TUTORIAL
+o pipenv ajuda na gestao de versoes fixas das dependencias, para ter um build deterministico, fazendo isso atravez do
+arquivo de configuração "Pipfile.lock"
+
+ajuda na gestao das dependecias pois agrupa as dependencias transitivas por dependecia de alto nivel
+
+
+    INSTALAÇÃO E CONFIGURAÇÃO
 
 pip install pipenv  : instale o pipenv
 
@@ -14,3 +20,30 @@ nano .bashrc  : edite a configuração para não criar a pasta do ambiente virtu
 OBS: se o pipenv estiver pegando o python do sistema ao invez do python do pyenv adicione o caminho correto do python
 para o PIPENV no .bashrc
 -export PIPENV_PYTHON="/home/phsw/.pyenv/shims/python3.6"
+
+    ARQUIVOS DO PIPENV
+
+Pipfile
+-tipo: é um arquivo de configuração "toml"
+
+Pipfile.lock
+-quarda as dependencias de forma deterministica e contem os hashes para segurança do download.
+
+    INSTALAÇÃO DE DEPENDÊNCIAS
+
+pipenv install nomedalib  : vai procurar no pypi e instalar na pasta .venv atual, adicionando tbm a lib no arquivo de
+configuração "Pipfile" no campo [packages].
+
+pipenv install --dev nomedalib : vai instalar a dependencia e adicionar no campo [dev-packages]
+pipenv install -d nomedalib : mesma coisa que o comando acima
+
+pipenv graph : verifica as dependencias de alto nivel e suas dependencias transitivas
+
+pipenv uninstall -d pytest : desenstalando uma lib de desenvolvimento. Removendo do "Pipfile"
+
+pipenv install -d :  cria o .venv com as depedencias de "Pipfile"
+
+    DELETAR DEPENDENCIAS TRANSITIVAS REMANECENTES DE UMA DEPENDENCIA DE ALTO NIVEL DELETADA
+
+delete a venv  ".venv":  pipenv uninstall -d pytest
+crie denovo a venv:  pipenv install -d :
