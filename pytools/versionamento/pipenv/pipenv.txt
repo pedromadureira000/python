@@ -20,6 +20,7 @@ nano .bashrc  : edite a configuração para não criar a pasta do ambiente virtu
 OBS: se o pipenv estiver pegando o python do sistema ao invez do python do pyenv adicione o caminho correto do python
 para o PIPENV no .bashrc
 -export PIPENV_PYTHON="/home/phsw/.pyenv/shims/python3.6"
+ou (export PATH="/home/phsw/.pyenv/bin:$PATH")
 
     ARQUIVOS DO PIPENV
 

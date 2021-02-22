@@ -1,4 +1,0 @@
-test unitario: testa uma classe em isolamento de qualquer outra
-
-teste de integração: utiliza os componentes reais.
--quando um teste depende de outro teste por ex.

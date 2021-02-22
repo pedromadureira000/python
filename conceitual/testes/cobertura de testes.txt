@@ -1,4 +1,0 @@
-cobertura de testes é a porcentagem do seu codigo que esta coberto por testes automatizados.
-
-integração com "codecov", usando pytest-cov
-

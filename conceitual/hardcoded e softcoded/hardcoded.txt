@@ -1,8 +1,0 @@
-Codificação rígida (do inglês, hard-code, hard-coding ou hardcoding), em computação, é a terminologia que refere-se à
-prática de desenvolvimento de software de embutir dados diretamente no código fonte de um programa ou outro objeto
-executável, ao invés de obter os dados de fontes externas ou gerá-los em tempo de execução.[1]. Normalmente, dados
-codificados rigidamente só podem ser modificados editando-se o código-fonte e recompilando o executável, embora ele
-possa ser alterado na memória ou no disco usando um depurador ou editor hexadecimal. Os dados que são codificados
-rigidamente geralmente representam pedaços de informações imutáveis, como constantes físicas, números de versão e
-elementos de texto estático. Por outro lado, dados codificados suavemente, codificam informações arbitrárias, como
-entrada do usuário, respostas do servidor HTTP ou arquivos de configuração, e são determinados em tempo de execução.

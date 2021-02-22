@@ -1,1 +1,0 @@
-debugger é uma cython extention

@@ -1,3 +1,0 @@
-a coneção serve para gerenciar a altenticação com seu banco de dados (parte de login e senha com o banco)
-
-sessão server para efetura as alterações no banco

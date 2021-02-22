@@ -1,2 +1,0 @@
-quando um objeto que precisa outros objetos para funcionar, recebe esses objetos como parametros, ao invez de crialos
-internamente.
