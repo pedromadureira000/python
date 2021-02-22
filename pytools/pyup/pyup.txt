@@ -1,5 +1,5 @@
 pyup é um sistema que verifica a versão das dependencias "requirements" do seu projeto, e automaticamente cria pull
-requests com essas atualizações de libs dos seus requirements.txt
+requests com essas atualizações de libs dos seus requirements
 
 vc pode por o distintivo do pyup para mostrar se as libs estam atualizadas, e o distintivo q mostra se as libs rodam em
 python3, é bom colocar como markdonw no README.
@@ -15,3 +15,15 @@ criar novas branchs com as atualizações das libs separadas. Nesse caso escolha
     OBSERVAÇÃO DA PULL REQUEST INICIAL DO PYUP COM ARQUIVO DE CONFIGURAÇÃO .pyup.yml SEM ATULIZAÇÃO DE LIB
 
 a primeira pull request cria apenas o .pyup.yml
+
+
+--------------------
+
+    CONFIGURANDO COM PIPENV
+
+adicione no arquivo de configuração do pipenv ".pyup.yml"
+{
+requirements:
+  - Pipfile
+  - Pipfile.lock
+}

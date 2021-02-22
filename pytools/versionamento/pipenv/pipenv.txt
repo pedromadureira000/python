@@ -42,6 +42,7 @@ pipenv graph : verifica as dependencias de alto nivel e suas dependencias transi
 pipenv uninstall -d pytest : desenstalando uma lib de desenvolvimento. Removendo do "Pipfile"
 
 pipenv install -d :  cria o .venv com as depedencias de "Pipfile" (recalcula versoes / build nao deterministico)
+pipenv install -d flake8 pytest coverage pytest-cov pytest-mock
 
 pipenv sync -d : instala dependencias de desenvolvimento do Pipfile.Lock (build deterministico)
 pipenv sync -d : instala dependencias de produção do Pipfile.Lock (build deterministico)
