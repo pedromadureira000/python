@@ -27,3 +27,8 @@ requirements:
   - Pipfile
   - Pipfile.lock
 }
+
+
+    ATUALIZANDO DEPENDENCIAS COM PIPENV
+
+pipenv update
