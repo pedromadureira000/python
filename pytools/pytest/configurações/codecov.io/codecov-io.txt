@@ -1,8 +1,7 @@
 o codecov.io vai ler os relatorios do pytest-cov e vai apresentar um relatorio dentro do github.
 
-
 #configurando no travis (com pipenv)
--como ele vai rodar apenas no travis vc poe pra instalar direto pelo .travis.yml ao invez de adicionar no requirements-dev
+-como ele vai rodar apenas no travis vc poe pra instalar direto pelo .travis.yml ao invez de adicionar nas dependencias
 -Vc configura para mandar o relatorio do codecov apenas caso o build do travis ocorra com sucesso, usando (after_sucess:)
 
 EX .travis.yml:

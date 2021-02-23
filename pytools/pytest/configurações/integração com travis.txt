@@ -1,10 +1,9 @@
-pip install pytest
-adicione o pytest no seu requiremments
-crie um pacote com o prefixo "test", e ponha os modulos de testes dentro dele (tbm com prefixo "test")
-crie uma função para fazer o test começando com o prefixo "test"
+1) crie um pacote com o prefixo "test", e ponha os pacotes e modulos de testes dentro dele , esses com prefixo "test_"
+2) crie uma função para fazer o test começando com o prefixo "test_"
 EX:
 def test_int():
-    assert 1==1
+    a = 1
+    assert a is 1
 
 #rodar o pytest no terminal
 pytest nomedopacote
