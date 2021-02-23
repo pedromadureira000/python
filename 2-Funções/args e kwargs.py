@@ -30,12 +30,12 @@ var(1,2,nome= 'Joao',sobrenome='sobrenome')
 
 #______________________________________________________________________________________________________
 
-#                                              desenpacotamento de *args e **kwargs
+#                                              z-desenpacotamento-z de *args e **kwargs
 args = (2,4,10)
 kwargs = {'nome':"pedro",'sobrenome':"henrique"}
 var(args,kwargs) # vai ser considerado dois parametros posicionais e vao cair em *args
 
-#desenpacotamento: use o * para tuplas(converte em parametros posicionais), e ** para dicionarios(converte em parametros nomeados)
+#z-desenpacotamento-z: use o * para tuplas(converte em parametros posicionais), e ** para dicionarios(converte em parametros nomeados)
 var(*args, **kwargs)  #R:(2, 4, 10)  e  {'nome': 'pedro', 'sobrenome': 'henrique'}
 
 

@@ -24,7 +24,7 @@ next(my_iterator) #erro
 enumerate, zip, reversed, e várias outras funções built-in retornam 6-iteradores:
 enumerate(numbers) #retorna um objeto irador'''
 
-# Geradores (sejam de funções geradoras ou expressões geradoras) são uma das maneiras mais simples de criar seus próprios 6-iteradores:
+# Geradores (sejam de funções geradoras ou expressões geradoras) são uma das maneiras mais string de criar seus próprios 6-iteradores:
 numbers = [1,2,3,4,5]
 squares = (n**2 for n in numbers)
 squares

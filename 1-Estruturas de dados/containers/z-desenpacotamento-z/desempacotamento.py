@@ -28,7 +28,7 @@ string= ('adfa')
 for indice,elemento in enumerate(string):
     print(indice,elemento)
 
-#--------------------desenpacotamento com *args
+#--------------------z-desenpacotamento-z com *args
 
 def my_sum(*args):
     print(args)  #*args recebe um numero variavel de parametros que são empacotados em uma tupla
