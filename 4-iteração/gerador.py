@@ -3,7 +3,7 @@ import time
 lista = [0,1,2,3,4]
 
 
-#------------------------------------/iteração sem gerador/----------------------------------------------#
+#------------------------------------/4-iteração sem gerador/----------------------------------------------#
 
 #----/Aqui será gerado a lista e so depois vai iterar
 def gera():
@@ -17,7 +17,7 @@ for v in g: #iterando sobre a lista
     print(v)
 
 
-#------------------------------------------iteração com gerador---------------------------------------------#
+#------------------------------------------4-iteração com gerador---------------------------------------------#
 #---/aqui vai iterando ao mesmo tempo q cria a lista.
 def gera():
     for n in range(10):
@@ -25,7 +25,7 @@ def gera():
         time.sleep(0.1)
 g = gera() #o g é agora um gerador, que é um iterador
 print(g)  #retorna: <generator object gera at 0x7f4bf31a4af0>
-for v in g: # como g é um gerador, ele gera os valores enquanto é feita a iteração
+for v in g: # como g é um gerador, ele gera os valores enquanto é feita a 4-iteração
     print(v)
 
 print(hasattr(g, '__iter__'))  #mostra que o objeto possui o atributo de um iterador

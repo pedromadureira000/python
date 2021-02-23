@@ -1,5 +1,5 @@
 lista = [0,1,2,3,4]
-print(hasattr(lista,'__iter__')) # verifica se o objeto tem o metodo de iteração, ou seja, se ele é um iteravel
+print(hasattr(lista,'__iter__')) # verifica se o objeto tem o metodo de 4-iteração, ou seja, se ele é um iteravel
 print(hasattr(lista,'__next__')) #mostra se o objeto tem o metodo next, ou seja, se ele é um iterador.
 
 
