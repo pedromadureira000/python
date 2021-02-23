@@ -1,3 +1,5 @@
+#o operador ternario é um tipo de estrutura de decisão
+
 valor= 30
 if valor == 30: print ('ok')
 print('ok') if valor == 30 else print('not ok')
