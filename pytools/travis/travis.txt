@@ -3,23 +3,22 @@ link do site  https://travis-ci.com/
 O travis é um servidor de integração continua. Ele verifica todos os pullrequests e se algo não passar nos testes ele
 bloqueia o pull request e mostra o que deu errado.
 
-ative o repositorio que vc quer pelo site
-adicione o arquivo de configuração do travis na raiz do seu projeto ".travis.yml"
-exemplo de .travis.yml, rodando em duas versões de python, instalando um requirement que chama outro requirement(so
-adicionar -r requirement.txt no final) para separar o requirement do desenvolvedor do codigo final, e rodando o flake8
-para inspecionar o codigo de acordo com o PEP8:
-[
+1) ative o repositorio que vc quer pelo site
+2) adicione o arquivo de configuração do travis na raiz do seu projeto ".travis.yml"
+3) exemplo de .travis.yml, instalando pipenv para criar o ambiente virtual e gerenciar dependencias, codecov para enviar
+os testes para a aplicação codecov.io e mostrar no github a cobertura de codigo, rodando o flake8 para inspecionar o
+codigo de acordo com o PEP8 e pytest para executar os testes:
+{
 language: python
 python:
-  - 3.6
-  - 2.7
+  - 3.7
 install:
-  - pip install -r requirements_dev.txt
+  - pip install -q pipenv codecov
+  - pipenv sync --dev
 script:
   - flake8
-]
+  - pytest libpythonph --cov=libpythonph
+after_success:
+  - codecov
+}
 Para remover detalhes de dependencias durante o build, use o "-q"
-[..
-install:
-  - pip install -q -r requirements_dev.txt
-..]

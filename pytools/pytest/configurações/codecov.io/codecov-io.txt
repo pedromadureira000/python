@@ -1,26 +1,5 @@
 o codecov.io vai ler os relatorios do pytest-cov e vai apresentar um relatorio dentro do github.
 
-#configurando no travis (com requiremments)
--como ele vai rodar apenas no travis vc poe pra instalar direto pelo .travis.yml ao invez de adicionar no requirements-dev
--Vc configura para mandar o relatorio do codecov apenas caso o build do travis ocorra com sucesso, usando (after_sucess:)
-
-EX .travis.yml:
-language: python
-python:
-  - 3.6
-install:
-  - pip install -q -r requirements_dev.txt codecov
-script:
-  - flake8
-  - pytest libpythonph --cov=libpythonph
-after_success:
-  - codecov
-
-OBS: apos comitar e o travis rodar o script, a configuração ser feita no codecov.io
-
-#adicionar os distintivos no README.md
-
-------------
 
 #configurando no travis (com pipenv)
 -como ele vai rodar apenas no travis vc poe pra instalar direto pelo .travis.yml ao invez de adicionar no requirements-dev
