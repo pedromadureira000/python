@@ -1,6 +1,3 @@
--------------/push
-"master -> origin : master"
-
 -----------/issues
 
 *vc pode referenciar a issue no commit/push com "close #<id da issue>", caso a pull request seja incorporada na upstream
