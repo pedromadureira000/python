@@ -94,6 +94,12 @@ comitadas para a branch master q vc esta criando, e a branch ramo vai ser sobres
 comitada.
 
 
+--------/ criar uma nova branch main
+crie uma nova branch entre nela, delete a main
+rode o comando:
+git checkout -b main origin/main
+
+
 
 
 
