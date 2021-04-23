@@ -6,7 +6,7 @@ outrodicio = dict(nome = "paulo", apelido = "pedra", altura = 174)
 #--------------/INDEXAÇÃO DE UM DICIONARIO/------------------
 
 print(dicio['apelido'])         #retorna o valor do elemento 'apelido'
-print(dicio.get('nome'))        #retorna o valor do elemento 'nome', porem caso nao encontre o valor, retorna null
+print(dicio.get('nome'))        #retorna o valor do elemento 'nome', porem caso nao encontre o valor, retorna None
 print(dicio.get('nomes', 'não definida'))    #vc tbm pode passar uma outro retorno para caso não ache
 dicio["apelido"] = "martins"         #modifica o valor de "apelido" para "martins", ou cria um novo item
 
