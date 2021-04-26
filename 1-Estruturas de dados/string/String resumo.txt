@@ -1,0 +1,108 @@
+---------------------/String/---------------------
+    DEFINITION
+
+Textual data in Python is handled with str objects, or strings. Strings are immutable sequences of Unicode code points.
+String literals are written in a variety of ways:
+
+Single quotes: 'allows embedded "double" quotes'
+
+Double quotes: "allows embedded 'single' quotes".
+
+Triple quoted: '''Three single quotes''', """Three double quotes"""
+
+Assigning to an indexed position in the string results in an error:
+
+>>> word[0] = 'J'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> word[2:] = 'py'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+
+    SPECIAL CHARACTERS
+
+Characters prefaced by \ are interpreted as special characters
+
+print(r"C:\\temp\ovos\\foto.png")  #dont look for special characters
+print("Ola\nMundo")   # \n means newline
+print("C:\temp")  #\t escape sequence for the horizontal tabulation.
+print('doesn\'t')  # use \' to escape the single quote
+
+    F-STRING
+
+def ola(nome,sobrenome):
+return f'ola {nome} {sobrenome}'
+print(ola('Renzo','Da silva'))
+
+       STRING FORMATTING
+
+#%d inteiro , %s string , %a variavel (a)
+#%.2f float pegando 2 numeros apos a virugla
+
+a = 'palavra'
+print('essa é a %s'%a) #substitui %s pela variavel (a)
+b= 10/3
+print('essa é uma %.2f'%b) #mostra o numero da variavel (b) com duas casas apos a #virgula
+print('float  %10.5f'%(12.444)) #o numero da esquerda é a qtd minima de caracteres que #vai ocupar (não podendo ser menor q o numero em si), o numero da direita é q qtd de #casas apos a virgula.
+print('numero %s, string %s'%(123.1,'texto')) #use %s pra converter numero
+print('one {p},two,{a},three{c},'.format(p=1,a="2",c=3)) #insere as 1-variaveis (p,a,c)
+print("a \n notas da turma foram {}:".format(a)) #substitui variavel"
+    STRING CONCATENATION
+
+>>> # 3 times 'un', followed by 'ium'
+>>> 3 * 'un' + 'ium'
+'unununium'
+>>> 'Py' 'thon'
+'Python'
+>>> prefix = 'Py'
+>>> prefix + 'thon'
+'Python'
+
+    STRING INDEXING AND SLICING
+
+While indexing is used to obtain individual characters, slicing allows you to obtain substring:
+>>> word = "Python"
+>>> word[0]
+'P'
+>>> "Python"[-1]
+'n'
+>>> word[0:2]  # characters from position 0 (included) to 2 (excluded)
+'Py'
+>>> word[2:5]  # characters from position 2 (included) to 5 (excluded)
+'tho'
+>>> word[:2]   # character from the beginning to position 2 (excluded)
+'Py'
+>>> word[4:]   # characters from position 4 (included) to the end
+'on'
+>>> word[-2:]  # characters from the second-last (included) to the end
+'on'
+###  Attempting to use an index that is too large will result in an error:
+>>> word[42]  # the word only has 6 characters
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+##  However, out of range slice indexes are handled gracefully when used for slicing:
+>>> word[4:42]
+'on'
+>>> word[42:]
+''
+
+   STRING METHODS
+
+    # split( )
+'python pro'.split()
+#R:['python','pro']
+'python-pro'.split('-')
+#R:['python','pro']"
+
+    # join( )
+lista = ['python','pro']
+'#'.join(lista)
+#R: 'python#pro'
+
+    #str.capitalize()
+Return a copy of the string with its first character capitalized and the rest lowercased.
+
+
