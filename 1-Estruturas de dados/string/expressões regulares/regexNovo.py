@@ -167,13 +167,23 @@ cpf = 'a 147.852.963-12 a'
 
 print(re.findall(r'[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}', cpf))
 
-# print(re.findall(r'((?:[0-9]{3}\.){2}[0-9]{3}-[0-9]{2})', cpf))
+    #como os 3 digitos numericos precedidos por ponto se repetem duas vezes pode-se usar um grupo
 
-# tags = re.findall(r'<([dpiv]{1,3})>(.+?)<\/\1>', texto)
-# tags = re.findall(r'<(?P<tag>[dpiv]{1,3})>(.+?)<\/(?P=tag)>', texto)
-# pprint(tags)
+print(re.findall(r'([0-9]{3}\.){2}[0-9]{3}-[0-9]{2}', cpf))
+#como o grupo foi criado so pra usar o quantificador {2} e não ter q repetir o trecho, entao faça:
+print(re.findall(r'((?:[0-9]{3}\.){2}[0-9]{3}-[0-9]{2})', cpf))
 
-#print(re.sub(r'(<(.+?)>)(.+?)(<\/\2>)', r'\1 MAIS \3 COISAS \4', texto))
+    #usando grupos nomeados
+texto = '''
+<p>Frase 1</p> <p>Eita</p> <p>Qualquer frase</p> <div>1</div> 
+'''
+tags = re.findall(r'<([dpiv]{1,3})>(.+?)<\/\1>', texto) #sem grupo nomeado
+tags = re.findall(r'<(?P<tag>[dpiv]{1,3})>(.+?)<\/(?P=tag)>', texto)  #com grupo nomeado
+pprint(tags)
+
+    #colocando novos conteudos no texto, usando os grupos e retrovisores para montar
+
+print(re.sub(r'(<(.+?)>)(.+?)(<\/\2>)', r'\1 MAIS \3 COISAS \4', texto))
 
 # # for tag in tags:
 # #     um, dois, tres = tag
