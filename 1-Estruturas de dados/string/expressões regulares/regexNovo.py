@@ -185,6 +185,86 @@ pprint(tags)
 
 print(re.sub(r'(<(.+?)>)(.+?)(<\/\2>)', r'\1 MAIS \3 COISAS \4', texto))
 
-# # for tag in tags:
-# #     um, dois, tres = tag
-# #     print(tres)
+
+#--------------------/definir começo e fim. E negação de conjuntos/----------------------------------------------
+
+# ^ = começa com         (bom pra validar campos onde um usuario envia um dado especifico)
+# $ = termina com
+# [^a-z] = negação (traz qualquer coisa que não seja "a-z")
+
+cpf = 'a 147.852.963-12 a' #nao valida
+cpf = '147.852.963-12 a' #nao valida
+cpf = '147.852.963-12' #valida
+
+print(re.findall(r'^((?:[0-9]{3}\.){2}[0-9]{3}-[0-9]{2})$', cpf))
+print(re.findall(r'[^a-z0-9.-]+', cpf)) #negei tudo e nao trouxe nada.
+
+#--------------------/seguências especiais (Shorthand) /----------------------------------------------
+texto = '''
+João trouxe    flores para sua amada namorada em 10 de janeiro de 1970,
+Maria era o nome dela.
+Foi um ano excelente na vida de joão. Teve_ALGO 5 filhos, todos adultos atualmente.
+maria, hoje sua esposa, ainda faz aquele café com pão de queijo nas tardes de
+domingo. Também né! Sendo a boa mineira que é, nunca esquece seu famoso
+pão de queijo.
+Não canso de ouvir a Maria:
+"Joooooooooãooooooo, o café tá prontinho aqui. Veeemm"!
+'''
+# \w -> [a-zA-Z0-9À-ú_]
+print(re.findall(r'\w+', texto))
+
+# \w -> [a-zA-Z0-9_] -> re.A
+print(re.findall(r'\w+', texto, flags=re.A))
+
+# \W -> [^a-zA-Z0-9À-ú_]    #com "W" maiusculo, vc tem a a negação do "\w"
+print(re.findall(r'\W+', texto))
+
+# \W -> [^a-zA-Z0-9_] -> re.A
+print(re.findall(r'\W+', texto, flags=re.A))
+
+# \d -> [0-9]       #qualquer número
+
+
+# \D -> [^0-9]
+
+# \s -> [ \r\n\f\n\t]   #qualquer espaço em branco
+print(re.findall(r'\s+', texto, flags=re.I))
+
+# \S -> [^ \r\n\f\n\t]   #encontra tudo que não for espaços
+print(re.findall(r'\S+', texto, flags=re.I))
+
+# \b -> borda            #encontra a borda ( uma string vazia)
+# serve pra encontrar palavras que começam ou terminam de um jeito expecifico
+print(re.findall(r'\be\w+', texto, flags=re.I))  #palavras que começam com e
+print(re.findall(r'\w+e\b', texto, flags=re.I)) #palavras que terminam com e
+print(re.findall(r'\b\w{4}\b', texto, flags=re.I)) #palavras que com 4 letras (sem a borda ele pegaria as 4 primeiras letras
+                                                   #de palavras com mais de 4 letras.)
+
+# \B -> não borda
+print(re.findall(r'Flores\B', texto, flags=re.I)) #procura por "Flores", mas sem borda no final
+
+
+#-----------------------------------------/flags/----------------------------------------------
+
+#re.A  = ASCII
+#sem acentos
+
+#re.I = IGNORECASE
+
+#re.M = Multiline      ^ e $ passam a representar o começo e o fim da linha, ou invez do começo e o fim da string.
+
+texto = '''
+131.768.460-53  asdf
+055.123.060-50   df
+955.123.060-90
+'''
+print(re.findall(r'^\d{3}\.\d{3}\.\d{3}\-\d{2}$', texto, flags=re.M))  #procura o padrão, por linha, ao invez de usar a regra no texto tod0.
+
+#re.S = Dotall
+# é bom quando vc quer econtrar um padrão com começo e fim predefinidos, vc vai usar um ".*", e pode ter quebra de linha no meio.)
+# O ".*" não reconhece quebra de linha, então é necessário usar a flag re.S
+
+texto2 = '''O João gosta de folia 
+E adora ser amado'''
+print(re.findall(r'^o.*o$', texto2, flags=re.I))  # sem re.S
+print(re.findall(r'^o.*o$', texto2, flags=re.I | re.S))  # com re.S
