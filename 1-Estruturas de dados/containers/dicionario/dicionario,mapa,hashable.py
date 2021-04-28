@@ -12,16 +12,14 @@ dicio["apelido"] = "martins"         #modifica o valor de "apelido" para "martin
 
 
 #-------------/TIPOS DE ITERAÇÃO COM DICIONARIOS/---------------------------
-
-for key in dicio:                                      #--CHAVE
+dicio = {"nome":"joão","apelido":"Ribeiro","altura":174}
+for key in dicio:
     print(key) #traz a chave
     print(dicio.get(key)) #traz o valor do item
     print((dicio[key])) #o msm q a linha acima
 
-
 for value in dicio.values():                  #--VALOR
     print(value, 'dicio.values()')
-
 
 for item in dicio.items():                    #--TUPLA COM CHAVE E VALOR
     print(item, "Itera com um argumento(chave) em dicio.item()")
