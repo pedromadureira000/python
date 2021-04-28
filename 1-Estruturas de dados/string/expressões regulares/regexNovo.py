@@ -160,7 +160,7 @@ for tag in tags:
 #exista o retrovisor referente ao grupo.
 tags = re.findall(r'<([dpiv]{1,3})>(?:.+?)<\/\1>', texto)
 pprint(tags)
-
+#OBS: se houver apenas grupos com ?: eles seram retornados. Se houver grupos com e sem ?:, sera retornado apenas os sem ?:
     #exemplo CPF
 
 cpf = 'a 147.852.963-12 a'
@@ -246,12 +246,13 @@ print(re.findall(r'Flores\B', texto, flags=re.I)) #procura por "Flores", mas sem
 
 #-----------------------------------------/flags/----------------------------------------------
 
-#re.A  = ASCII
-#sem acentos
+#re.A  = ASCII   (sem acentos)
 
 #re.I = IGNORECASE
 
 #re.M = Multiline      ^ e $ passam a representar o começo e o fim da linha, ou invez do começo e o fim da string.
+
+#re.X VERBOSE   (PERMITE ESCREVER COMENTARIOS NA EXPRESSÃO E USAR TRIPPLE COTES.
 
 texto = '''
 131.768.460-53  asdf
@@ -268,3 +269,177 @@ texto2 = '''O João gosta de folia
 E adora ser amado'''
 print(re.findall(r'^o.*o$', texto2, flags=re.I))  # sem re.S
 print(re.findall(r'^o.*o$', texto2, flags=re.I | re.S))  # com re.S
+
+
+#-----------------------------------------/Lookahead e lookbehind/----------------------------------------------
+#Lookhead e Loockbihind não retornam nada, apenas checam. O que retorna é a expressão regular
+
+# Positive lookahead
+pprint(re.findall(r'\w+\s+(\d+\.\d+\.\d+\.\d+)\s+\w+\s+(?=active)', texto))   #termine com "active
+
+# Negative lookahead
+pprint(re.findall(r'\w+\s+(\d+\.\d+\.\d+\.\d+)\s+\w+\s+(?!active)', texto))  #nao termine com "active"
+
+# Positive lookahead
+pprint(re.findall(r'(?=.*[^in]active).+', texto))
+#quero a string a linha q termina com "active", sem "in" antes de "active", e com qualquer coisa antes de active
+
+# Positive lookbehind
+pprint(re.findall(r'\w+(?<=ONLINE)\s+(\d+\.\d+\.\d+\.\d+)\s+\w+\s+\w+', texto)) #esse nao precisa do "\w" antes
+#procura por "online" antes de (\s+(\d+\.\d+\.\d+\.\d+)\s+\w+\s+\w+')
+
+# Negative lookbehind
+pprint(re.findall(r'\w+(?<!ONLINE)\s+(\d+\.\d+\.\d+\.\d+)\s+\w+\s+\w+', texto)) #precisa do "\w" antes
+#procura por strings que não tenham "online" antraz de (\s+(\d+\.\d+\.\d+\.\d+)\s+\w+\s+\w+')
+
+# Positive lookbehind
+pprint(re.findall(r'\w+(?<=OFFLINE)\s+\d+\.\d+\.\d+\.\d+\s+\w+\s+\w+', texto))
+
+# Negative lookbehind
+pprint(re.findall(r'\w+(?<!OFFLINE)\s+\d+\.\d+\.\d+\.\d+\s+\w+\s+\w+', texto))
+
+#-----------------------------------------/EX: CPF e IP  /----------------------------------------------
+
+# 0.0.0.0 255.255.255.255
+# 025.258.963-10 02525896310
+
+# Teste essa expressão
+# em https://regex101.com/r/lWVPOr/1
+cpf = '025.258.963-10'
+cpf_reg_exp = re.compile(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$', flags=0)
+# print(cpf_reg_exp.search(cpf))
+
+# Teste essa expressão
+# em https://regex101.com/r/XDyL7q/1
+ip_reg_exp = re.compile(
+    r'^'  # Começa com
+    r'(?:'
+    r'(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])\.'
+    r'){3}'  # Sequência de 3 digitos e um ponto repete 3x
+    r'(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])'
+    r'$',  # Termina com
+    flags=0
+)
+
+for i in range(301):
+    ip = f'{i}.{i}.{i}.{i}'
+
+    print(ip, ip_reg_exp.findall(ip))
+
+    #em uma linha só
+
+print(re.findall(r'^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])\.?){4}\b$', "235.236.237.238"))
+
+
+#-----------------------------------------/EX: CPF Validado com Negativelookahead/----------------------------------------------
+# https://regex101.com/r/0OM1oz/1/
+
+#não captura seguencias de so numero, tipo: 000.000.000-00
+
+import re
+from pprint import pprint
+
+
+regex = re.compile(
+    r"^(?!(\d)\1{2}\.\1{3}\.\1{3}-\1{2})(\d{3}\.\d{3}\.\d{3}-\d{2})$",
+    flags=re.MULTILINE
+)
+
+test_str = ("698.547.520-54\n"
+            "060.235.190-16\n"
+            "683.134.960-96\n"
+            "899.344.730-62\n"
+            "103.778.870-21\n"
+            "721.478.580-30\n"
+            "366.310.090-14\n"
+            "794.289.350-26\n"
+            "190.259.410-01\n"
+            "000.000.000-01\n"
+            "900.000.000-00\n\n"
+            "000.000.000-00\n"
+            "111.111.111-11\n"
+            "222.222.222-22\n"
+            "333.333.333-33\n"
+            "444.444.444-44\n"
+            "555.555.555-55\n"
+            "666.666.666-66\n"
+            "777.777.777-77\n"
+            "888.888.888-88\n"
+            "999.999.999-99\n\n"
+            )
+
+pprint(regex.findall(test_str))
+
+#-----------------------------------------/EX: Telefone----------------------------------------------
+
+import re
+
+# https://regex101.com/r/DfXYXM/1/
+regexp = re.compile(r'^(?:\(\d{2}\)\s)(?:9\s)(?:\d{4}-\d{4})$', flags=re.M)
+#(?:  ) (?:  ) (?:  )  Trez grupos com :? retornam tudo em uma string, ao invez de 3 retornos numa tupla
+#((  ) (  ) (  ))   Um grupo com 3 grupos aninhados: retorna uma tupla com os 4 grupos, começando pelo grupo pai
+texto = '''
+(21) 9 8852-5214
+(11)9955-1231
+(11)            9955-1231
+(35) 9 9975-4521
+(31) 3851-2587
+9 8571-5213
+1234-5647
+'''
+
+for telefone in regexp.findall(texto):
+    print(telefone)
+
+#-----------------------------------------/EX: Senha----------------------------------------------
+# https://regex101.com/r/W4kRV2/2/
+# https://en.wikipedia.org/wiki/List_of_Unicode_characters
+import re
+senha_forte_regexp = re.compile(
+    r'^'
+    r'(?=.*[a-z])'
+    r'(?=.*[A-Z])'
+    r'(?=.*[0-9])'
+    r'(?=.*[ -\/:-@[-`{-~])'
+    r'.{12,}'
+    r'$',
+    flags=re.M
+)
+
+string = '''
+VÁLIDAS
+v2Ts7<o9T~}Y
+j25TTbjJ:6{<
+s`Mu6T;4M1!y
+Li`hk6:3WX>3
+d.D09}^dI2Vn
+SEM MINÚSCULAS
+I7^Y3RS^ 9]7
+[P6W"83L5V{[
+B7=;K8D6_}W5
+1B_RT`93R%>1
+EZU{7;2&D:64
+SEM MINÚSCULAS E NÚMEROS
+E}LV`C?X_G:{
+AJH[@HD*V~=<
+\A~AC{_V~MG 
+W<-T}W:QAF'{
+~YJ}|FILN>~)
+SEM NÚMEROS CARACTERES E MINÚSCULAS
+PBDZDPECUDNN
+EJQWFWFFDEHY
+XRCNLNRHYOZJ
+TWIYPLWUDMNN
+JMDTJSEPKVON
+QUANTIDADE INVÁLIDA (6)
+Iu4<1j
+1x`P6g
+@9t3Ry
+qf9_6H
+0o`9fO
+'''
+
+print(senha_forte_regexp.findall(string))
+
+
+#-----------------------------------------/EX: Senha----------------------------------------------
