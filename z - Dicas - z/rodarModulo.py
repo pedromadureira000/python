@@ -1,1 +1,1 @@
-# python3 -m nomedopacote.nomedomodulo
+# python3 -m nomedopacote.nomedomodulo.

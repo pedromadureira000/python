@@ -12,7 +12,7 @@ pytest nomedopacote/nomedomodulo
 #rodar o pytest no pycharm
 configure o pytest:settings/tools/python integrated tools/default test runner>py.test
 para rodar é iqual ao unittest, basta clicar no pacote/modulo/função
-OBS: o running do pytest tbm roda testes escritos no formato do unittest
+OBS: o running do pytest tbm roda testes escritos no formato do unittest.
 
 #integrar com travis
 criar arquivo .travis.yml

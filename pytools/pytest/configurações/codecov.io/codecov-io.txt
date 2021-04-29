@@ -1,4 +1,4 @@
-o codecov.io vai ler os relatorios do pytest-cov e vai apresentar um relatorio dentro do github.
+o codecov.io vai ler os relatorios do pytest-cov e vai apresentar um relatorio dentro do github
 
 #configurando no travis (com pipenv)
 -como ele vai rodar apenas no travis vc poe pra instalar direto pelo .travis.yml ao invez de adicionar nas dependencias

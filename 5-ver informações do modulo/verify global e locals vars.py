@@ -1,2 +1,2 @@
-print(globals()) #retorna um dicionario com as 1-variaveis globais
-print(locals())  #retorna um dicionario com as 1-variaveis locais
+print(globals()) #retorna um dicionario com as variaveis globais
+print(locals())  #retorna um dicionario com as variaveis locais

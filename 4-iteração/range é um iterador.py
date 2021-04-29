@@ -8,7 +8,7 @@ for n in range(3):
 iter(range(3))
 #R: <range_iterator object at 0x7fe173542ed0>
 
-	#mas objetos range não sao 6-iteradores por si mesmos, nos nao podemos chamar next em um objeto range
+	#objetos range não sao iteradores por si mesmos, nos nao podemos chamar next em um objeto range
 
 next(range(3))
 #R: Traceback (most recent call last):
@@ -36,7 +36,7 @@ tuple(numbers)
 	                                    #-- ENTÃO O QUE É O RANGE? --##
 
 	# O objeto range é "lazy" em certo sentido, porque não gera todos os números que "contém" quando o criamos. Em vez
-    # disso, ele nos fornece esses números conforme precisamos deles ao fazer  um loop sobre ele.
+    # disso, ele nos fornece esses números conforme precisamos deles ao fazer um loop sobre ele.
 
 	# Aqui está um objeto range e um generator (que é um tipo de iterador):
 
@@ -53,6 +53,8 @@ len(square)
 # TypeError: object of type 'generator' has no len()
 
 	# e eles podem ser indexados
+numbers = range(1_000_000)
+square = (n**2 for n in numbers)
 
 numbers[-2]
 # R:999998

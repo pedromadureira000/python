@@ -3,16 +3,13 @@ class Pessoa:
         self.nome = nome
         self.filhos = list(filhos)
 
-
     def cumprimentar(self):
         return f"ola {id(self)}"
-
-
 
 if __name__ == '__main__':
     pedro = Pessoa(nome="Pedro")
     henrique = Pessoa(pedro, nome="Henrique")
-    print(henrique.filhos)
+    print(henrique.filhos, "henrique.filhos")
     for filhos in henrique.filhos:
         print(filhos.nome)
 

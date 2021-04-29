@@ -14,4 +14,4 @@ if __name__ == '__main__':
     print(henrique.__dict__)
     print(pedro.__dict__)
     del henrique.sobrenome      #vc pode deletar atributos dinamicamente, msm sendo um atributo definido em __init__
-    print(henrique.__dict__)    #isso não é uma boa pratica
+    print(henrique.__dict__)    #isso não é uma boa pratica.

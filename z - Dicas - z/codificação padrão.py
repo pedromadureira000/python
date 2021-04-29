@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: cp1252 -*-
 
-
 '''
 Para declarar uma codificação diferente da padrão, uma linha de comentário especial deve ser adicionada como primeira
 linha do arquivo. A sintaxe é essa:
@@ -14,7 +13,6 @@ a declaração de codificação deve ser adicionada como a segunda linha do arquivo.
 
 #!/usr/bin/env python3
 # -*- coding: cp1252 -*-
-
 '''
 
 #shebang: muda o interpretador python

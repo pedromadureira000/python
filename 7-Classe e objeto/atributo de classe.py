@@ -15,7 +15,7 @@ print(Pessoa.__dict__) #dunderdict na classe mostra os atributos de "object" e t
 
 pedro.olhos = 1
 #uma vez que eu mudei o valor do atributo de classe para um objeto, ele passa
-#a fazer parte dos atributos de instancia dessa objeto
+#a fazer parte dos atributos de instancia dessa objeto.
 print(pedro.__dict__)
 print(id(pedro.olhos),id(Pessoa.olhos))
 # O interpretador python busca primeiro nos atributos da instancia, depois nos da classe.

@@ -4,3 +4,5 @@ class Teste:
 carro = Teste()
 carro.genero = "Mamamia"
 print(carro.genero.lower()[0] == 'm')
+
+#

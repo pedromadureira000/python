@@ -15,7 +15,7 @@ print(pedro.olhos)
 #nesse caso, olhos sera encontrado na classe Pessoa.
 print(pedro.__dict__)
 #olhos é um atributo de classe da classe Pessoa e nao aparece em __dict__ da instancia pedro e
-#da classe Homem.
+#da classe Homem
 print(Homem.__dict__)
 print(Pessoa.__dict__)
 

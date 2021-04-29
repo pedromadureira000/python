@@ -7,8 +7,6 @@ Não, tem gente que cria sempre um setup para colocar dependências de alto nív
 ambiente virtual. Vc pode com um setup.py fazer um pip install <diretório> que ele instala baseado no arquivo. Não é o
 foco desse curso, mas ele permite a vc criar comandos que ficam disponíveis quando a lib é instalada via setup.py.
 
-
-
 ------------/ Criação do setup.py
 
     Exemplo de arquivo setup.py
@@ -16,7 +14,6 @@ https://github.com/pythonprobr/libpythonpro/blob/master/setup.py
 
     Lista de classificadores
 https://pypi.org/pypi?%3Aaction=list_classifiers
-
 
 ----------/campo  "install_requires"
 
@@ -40,7 +37,6 @@ do projeto e testando o resultado.
 sao as dependencias que um pacote depende, como urlib3 para requests
 são dependencias indiretas para o projeto pythontools, por exemplo.
 
-
 -------/egg
 quando vc instala o pacote libpythonph, como mostrado acima em (testando o setup.py localmente), é criado um "egg" que
 é um é uma estrutura lógica que incorpora o lançamento de uma versão específica de um projeto Python, incluindo seu
@@ -58,7 +54,6 @@ individuais possam selecionar as versões que desejam usar.
 -----/instalação por link de arquivo zip (arquivo criado a partir de tag)
 vc pega o o url do pacote no campo code>tag de um projeto no github
 pip install https://github.com/pedromadureira000/pytools/archive/0.1.zip
-
 
 -----/Publicação de release no PyPi
 1º) ter uma conta no pypi

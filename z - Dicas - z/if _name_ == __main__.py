@@ -1,6 +1,5 @@
 #ATALHO:   Digite "main" e de um tab.
 
-
 def main(x:float=1,y:float=2) -> float:
     return x+y
 # isso pergunta se o codigo desse arquivo.py esta sendo executado dentro do arquivo principal ou como um modulo importado

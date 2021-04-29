@@ -1,4 +1,4 @@
-def ola(nome,sobrenome='Henrique',idade=18):
+def ola(nome, sobrenome='Henrique', idade=18):
     print(f'olá {nome}{sobrenome} que tem {idade} de idade')
 ola("Pedro","Da silva", 21) #os parametros são passados por justaposição
 

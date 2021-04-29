@@ -1,12 +1,12 @@
-# *nomes de classes sempre devem comerçar com letra maiuscula
-# *classes podem ter atributos e metodos. E tem alguns metodos especiais como:
+# nomes de classes sempre devem comerçar com letra maiuscula
+# classes podem ter atributos e metodos. E tem alguns metodos especiais como:
 # __init__(selv, breed)  para iniciar atributos
 # __str__(self):  é o metodo print(objeto)
 # __len__(self): é o metodo que traz uma contagem de qtd
 # __del__(self): é o metodo para o comando se deleta o objeto com del
 
 #------------ATRIBUTOS-------------------------
-class Dog(object):
+class Dog():
     def __init__(self, breed, name):
         self.breed = breed
         self.name = name
@@ -14,7 +14,7 @@ sam = Dog(breed='Lab', name='Sam')  #instanciou a classe
 frank = Dog(breed='Huskie',name='Frank')
 print(type(sam)) #veja o tipo de objeto
 #---------------METODOS----------------------
-class Circle(object):
+class Circle():
         pi=3.14
         def __init__(self, radius=1):
             self.radius = radius

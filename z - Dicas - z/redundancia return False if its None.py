@@ -11,10 +11,10 @@ def naoredundante():
         return False
     return True
 
-def inteligente():
+def vefificanone():
     condicao = None
     return not condicao is None
 
-print(redundante())
+print(vefificanone())
 print(naoredundante())
-print(inteligente())
+

@@ -6,48 +6,6 @@ l.count(2)  #retorno: 1
     # type()
 print(type(1)) #retorno: 'int'
 
-# filter()
-"""pega uma lista e passa todos os valores por uma função que deve retornar um bool, ou o valor da lista. No final, o filter
-retorna um objeto filter, que pode ser convertido para uma lista"""
-lista = [1, 2, 3, 4, 5]
-
-
-def npar(n):
-    if n % 2 == 0:
-        return True
-
-
-a = list(filter(npar, lista))
-b = filter(lambda x: x % 2 == 0, lista)  # a função lambda equivale a função "npar"
-print(a, b)
-
-# map()
-lista = list(range(10))
-
-
-def pow(n):
-    return n ** 2
-
-
-lista_pow_def = list(map(pow, lista))
-lista_pow_lambda = list(map(lambda n: n ** 2, lista))
-
-print(lista_pow_def)
-
-# reduce()
-from functools import reduce
-
-list = [1, 2, 3, 4, 5, 6]
-
-
-# soma
-def teste(x, y):
-    return x + y
-
-
-soma = reduce(teste, list)
-# convere o maior
-maior = reduce(lambda a, b: a if (a > b) else b, list)
 
 # zip()
 x = [1, 2, 3]
@@ -94,7 +52,7 @@ d1['b'] = 'B'
 d2 = OrderedDict()
 d2['b'] = 'B'
 d2['a'] = 'A'
-print(d1 == d2)
+print(d1 == d2)  # False
 # ele leva em conta a ordem de lançamento de valores no dicionario
 
 # counter()
