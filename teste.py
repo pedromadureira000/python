@@ -1,18 +1,25 @@
-olhos = 1
-class Pessoa:
-    olho = 2
-    def cumprimentar(self):  #metodo de instancia: acessa atributos do objeto
+class Produto:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
 
-        return f"ola {id(self)}"
+    def desconto(self, percentual):
+        self.preco = self.preco - (self.preco * (percentual / 100))
+        #getter
+    @property
+    def preco(self):
+        return self._preco
+        #setter
+    @preco.setter
+    def preco(self, valor):
+        if isinstance(valor, str):
+            valor = float(valor.replace("R$", ''))
+        self._preco = valor
+p1 = Produto('camiseta', 50)
+p1.desconto(10)
+print(p1.preco)
 
-    @staticmethod
-    def metodo_statico(): #metodo statico: funciona como uma função atrelada ao objeto Pessoa (nao acessa atributos)
-        return 42
-    @classmethod         #metodo da classe: acessa atributos de classe
-    def metodo_de_classe(cls):
-        return f'{cls} - olhos {cls.olhos}'
-if __name__ == '__main__':
-    p = Pessoa()
-    print(p.metodo_statico(), Pessoa.metodo_statico())
-    print(p.metodo_de_classe())
-    print(Pessoa.metodo_de_classe())
+p2 = Produto("caneca", 'R$15')
+p2.desconto(10)
+print(p2.preco)
+
