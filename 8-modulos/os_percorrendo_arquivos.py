@@ -41,8 +41,7 @@ def format_size(file_size):
         file_size = round(file_size, 2)
         return f'{file_size}{text}'.replace('.', ',')
 
-
-
+print(os.walk(path_search))
 for root, dirs, files in os.walk(path_search):
     # print(root) # path starting in /home
     # print(dirs) # list with all directories
