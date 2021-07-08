@@ -3,6 +3,7 @@ import os
 # print(os.getcwd())  # mostra o path atual
 # os.chdir('/home/phsw/PycharmProjects/python/')  # muda pra esse diretorio
 # print(os.getcwd())
+#os.path.isfile(file_path)
 
 # -------/ verificar todos os diretorios e arquivos de um diretorio
 path_search = input("type a path") # a partir do diretorio '/'
